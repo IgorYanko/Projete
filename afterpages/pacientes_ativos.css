@@ -1,3 +1,7 @@
 body {
   background-color: #add8e6;
 }
+
+#Botao{
+  cursor: pointer;
+}
