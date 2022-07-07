@@ -20,7 +20,7 @@ svg {
 h2 {
   text-align: center;
   cursor: pointer;
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 #div1 {

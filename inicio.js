@@ -1,5 +1,5 @@
 function clicar1() {
-  window.location = "./afterpages/fichas_medicas.html";
+  window.location = "./fichas_medicas";
 }
 
 function clicar2() {
