@@ -1,11 +1,11 @@
 function clicar1() {
-  window.location = "./afterpages/fichas_medicas.html";
+  window.location = "/fichas_medicas/fichas_medicas.html";
 }
 
 function clicar2() {
-  window.location = "./afterpages/pacientes_ativos.html";
+  window.location = "/questionario/questionario.html";
 }
 
 function clicar3() {
-  window.location = "./afterpages/cadastro.html";
+  window.location = "/cadastro/cadastro.html";
 }

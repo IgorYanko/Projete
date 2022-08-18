@@ -6,5 +6,5 @@ function enviarDados() {
   var sexo = document.getElementById("sexo").value;
   var alergias = document.getElementById("alergias").value;
   var historico = document.getElementById("historico").value;
-  alert(nome, data, peso, altura, sexo, alergias, historico);
+  alert(peso);
 }
