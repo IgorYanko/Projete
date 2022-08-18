@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro</title>
   <link rel="stylesheet" href="/afterpages/cadastro.css">
+  <script src="/cadastro/cadastro.js"></script>
 </head>
 
 <body>
-  <form method="POST" action="cadastro.html" onsubmit="">
+  <form method="POST" action="cadastro.html" onsubmit="return enviarDados();">
     <div id="div">
       <table>
         <tr>
@@ -46,6 +47,7 @@
         </tr>
         <td>Histórico médico:</td>
         <td><input type="text" name="historico" id="historico"></td>
+        <td><input type="submit" value="Enviar Dados"></td>
         </tr>
       </table>
     </div>
