@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="/cadastro/cadastro.css">
+  <script src="/cadastro/cadastro.js"></script>
+</head>
+
+<body>
+  <form method="POST" action="cadastro.html" onsubmit="return enviarDados();">
+    <div id="div">
+      <table>
+        <tr>
+          <td>Nome: </td>
+          <td><input type="text" name="nome" id="nome"></td>
+        </tr>
+        <tr>
+          <td>Data de nascimento: </td>
+          <td><input type="date" name="data" id="data"></td>
+        </tr>
+        <tr>
+          <td>Peso: </td>
+          <td><input type="number" name="peso" id="peso" </td>
+          <td>Kg</td>
+        </tr>
+        <tr>
+          <td>Altura: </td>
+          <td><input type="number" name="altura" id="altura" </td>
+          <td>cm</td>
+        </tr>
+        <tr>
+          <td>Sexo:</td>
+          <td>
+            <select name="sexo" id="sexo">
+              <option value="Masculino">Masculino</option>
+              <option value="Feminino">Feminino</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </td>
+        <tr>
+          <td>Alergias:</td>
+          <td><input type="text" name="alergias" id="alergias"></td>
+        </tr>
+        <td>Histórico médico:</td>
+        <td><input type="text" name="historico" id="historico"></td>
+        <td><input type="submit" value="Enviar Dados"></td>
+        </tr>
+      </table>
+    </div>
+</body>
+
+</html>

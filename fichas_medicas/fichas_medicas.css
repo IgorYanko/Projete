@@ -1,0 +1,68 @@
+body {
+  background-color: #87ceeb;
+  margin: 0;
+  font-family: Arial;
+}
+
+h1 {
+  text-align: center;
+  border-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-size: 25px;
+}
+
+#search{
+  margin-top: 4%;
+  margin-left: 25%;
+  background-color: #00a86b;
+  border: solid 2px #000;
+  border-radius: 10px;
+  width: 600px;
+  height: 32px;
+}
+
+#txtsearch{
+  float: left;
+  background-color: transparent;
+  padding-left: 5px;
+  font-size: 18px;
+  border: none;
+  height: 32px;
+  width: 500px;
+}
+
+#btnsearch{
+  border: none;
+  float: right;
+  height: 32px;
+  border-radius: 0 7px 7px 0;
+  width: 70px;
+  font-weight: bold;
+  background:#008656;
+}
+
+#searchsvd{
+  float: left;
+}
+
+input{
+  style:none;
+}
+
+textarea:focus, input:focus{
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+#pacientesbox{
+  background-color: #00a86b;
+  margin: 30px 100px 0px 230px;
+  width: 770px;
+  height: 400px;
+  border: solid 2px #000;
+  border-radius: 20px;
+}
