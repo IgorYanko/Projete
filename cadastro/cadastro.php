@@ -13,5 +13,5 @@
             Values ('$nome', '$data', '$altura', '$peso', '$sexo', '$alergias', '$historico')";
 
     if(mysqli_query($conexao,$sql));
-    echo("O cadastro ")
+    echo("O cadastro foi realizado")
 ?>
