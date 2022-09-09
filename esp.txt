@@ -1,0 +1,60 @@
+// Escrito por Renan Romão Oliveira e Regimar Francisco dos Santos
+// Uso permitido para quaisquer fins, modifique e divirta-se =)
+
+
+
+#include <ESP8266WiFi.h>
+
+ char* ssid = "Luz";
+ char* pwd = "12345678";
+
+// Endereço IP do computador que servirá como servidor
+IPAddress server(192,168,0,113);
+
+WiFiClient client;
+
+void setup() {
+  Serial.begin(115200);
+
+  Serial.print("Conectando a ");
+  Serial.println(ssid);
+  
+  WiFi.begin(ssid, pwd);
+  while (WiFi.status() != WL_CONNECTED){
+    delay(100);
+    Serial.print(".");
+    
+  }
+  
+  Serial.println("Iniciando conexao com o server");
+
+  // Conecta o cliente ao servidor na porta 80,
+  // porta padrão do protocolo HTTP
+  if(client.connect(server, 80)) {
+    Serial.println("conectado ao server");
+    // Faz a requisição HTTP
+    client.println("GET /projete/index.php HTTP/1.1");
+    client.println("Host: 192.168.0.113:80");
+    client.println("Connection: close");
+    client.println();
+  }
+}
+
+void loop() {
+  // Se existirem bytes vindos do servidor disponíveis
+  // lê e os imprime no monitor serial
+  while (client.available()) {
+    char c = client.read();
+    Serial.write(c);
+  }
+
+  // Desativa o cliente se o servidor estar desconectado
+  if (!client.connected()) {
+    Serial.println();
+    Serial.println("Desconectando do server");
+    client.stop();
+
+    // Não faz mais nada por tempo indeterminado 
+    while (true);
+  }
+}
