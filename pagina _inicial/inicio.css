@@ -14,13 +14,13 @@ h1 {
 }
 
 svg {
-  display: inline-block;
+  display: inline-flex;
 }
 
 h2 {
   cursor: pointer;
-  display: inline-block;
-  justify-content: center;
+  display: inline-flex;
+  justify-content: row;
 }
 
 #div1,
