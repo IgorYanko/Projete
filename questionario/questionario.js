@@ -33,9 +33,10 @@ const q1 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  sintoma: function (sintoma) {
-    +tosse;
-  },
+  valor: 1,
+  // sintoma: function (sintoma) {
+  //   +tosse;
+  // },
 };
 
 const q2 = {
@@ -44,7 +45,7 @@ const q2 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  valor: "febre",
+  valor: 2,
 };
 
 const q3 = {
@@ -53,7 +54,7 @@ const q3 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  valor: "cefaleia",
+  valor: 3,
 };
 
 const q4 = {
@@ -62,7 +63,7 @@ const q4 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  valor: "dornocorpo",
+  valor: 4,
 };
 
 const q5 = {
@@ -71,7 +72,7 @@ const q5 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  valor: "coriza",
+  valor: 5,
 };
 
 const q6 = {
@@ -80,7 +81,7 @@ const q6 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  valor: "perdadeapetite",
+  valor: 6,
 };
 
 const q7 = {
@@ -89,7 +90,7 @@ const q7 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  valor: "perdadesentido",
+  valor: 7,
 };
 
 const q8 = {
@@ -98,7 +99,7 @@ const q8 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  valor: "diarreia",
+  valor: 8,
 };
 
 const q9 = {
@@ -107,7 +108,7 @@ const q9 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  valor: "manchas",
+  valor: 9,
 };
 
 const q10 = {
@@ -116,7 +117,7 @@ const q10 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  valor: "nauseas",
+  valor: 10,
 };
 
 const q11 = {
@@ -125,7 +126,7 @@ const q11 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  valor: "dordegarganta",
+  valor: 11,
 };
 
 const q12 = {
@@ -134,7 +135,7 @@ const q12 = {
   alternativa1: "Sim",
   alternativa2: "Não",
   correta: "Sim",
-  valor: "dordebarriga",
+  valor: 12,
 };
 
 // CONSTANTE COM UM ARRAY DE OBJETOS COM TODAS AS QUESTOES
@@ -191,7 +192,7 @@ function verificarSeAcertou(nQuestao, resposta) {
   let valor = questoes[numeroDaQuestao].valor;
 
   if (respostaEscolhida == certa) {
-    respostap += sintoma;
+    respostap += valor;
     console.log(respostap);
   }
 
@@ -213,32 +214,52 @@ function verificarSeAcertou(nQuestao, resposta) {
 }
 
 function fimDoJogo() {
-  instrucoes.textContent = "Fim de Jogo!";
-  numQuestao.textContent = "";
+  instrucoes.textContent = "";
+   numQuestao.textContent = "";
 
-  let pont = "";
-  pontos == 0 ? (pont = "ponto") : (pont = "pontos");
+ let pont = "";
+   pontos == 0 ? (pont = "ponto") : (pont = "pontos");
 
-  pergunta.textContent = "Você conseguiu " + pontos + " " + pont;
+  // pergunta.textContent = "Você conseguiu " + pontos + " " + pont;
 
-  aviso.textContent = "Você conseguiu " + pontos + " " + pont;
+  // aviso.textContent = "Você conseguiu " + pontos + " " + pont;
 
-  a.textContent = "";
-  b.textContent = "";
-  c.textContent = "";
+   a.textContent = "";
+   b.textContent = "";
 
   a.setAttribute("value", "0");
   b.setAttribute("value", "0");
-  c.setAttribute("value", "0");
 
-  // OCULTAR O ARTICLE DA QUESTAO
-  articleQuestoes.style.display = "none";
-
-  setTimeout(function () {
-    pontos = 0; // zerar placar
+  setTimeout(function() {
+    pontos = 0 // zerar placar
     location.reload();
-  }, 2000);
-}
+  }, 2000)
+
+//   // OCULTAR O ARTICLE DA QUESTAO
+   articleQuestoes.style.display = "none";
+
+   if (respostap == 32) {
+    alert("Você possivelmente está com gripe")
+  }
+  if (respostap == 28 ) {
+    alert("Você possivelmente está com  covid")
+  }
+  if (respostap == 36) {
+    alert("Você possivelmente está com cólera")
+  }
+  if (respostap == 18) {
+    alert("Você possivelmente está com varíola")
+  }
+  if (respostap == 51) {
+    alert("Você possivelmente está com virose")
+  }
+  if (respostap == 34) {
+    alert("Você possivelmente está com dengue")
+  }
+
+
+
+ }
 
 var gripe = 32;
 var covid = 28;
@@ -261,39 +282,3 @@ const nauseas = 10;
 const dordegarganta = 11;
 const dordebarriga = 12;
 
-if (q1 == true) {
-  respostap + tosse;
-}
-if (q2 == true) {
-  respostap + febre;
-}
-if (q3 == true) {
-  respostap + cefaleia;
-}
-if (q4 == true) {
-  respostap + dornocorpo;
-}
-if (q5 == true) {
-  respostap + coriza;
-}
-if (q6 == true) {
-  respostap + perdadeapetite;
-}
-if (q7 == true) {
-  respostap + perdadesentido;
-}
-if (q8 == true) {
-  respostap + diarreia;
-}
-if (q9 == true) {
-  respostap + manchas;
-}
-if (q10 == true) {
-  respostap + nauseas;
-}
-if (q11 == true) {
-  respostap + dordegarganta;
-}
-if (q12 == true) {
-  respostap + dordebarriga;
-}
