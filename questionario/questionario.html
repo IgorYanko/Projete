@@ -2,87 +2,51 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="icon" href="images/favicon.png" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Questionário Médico</title>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="questionario.css" />
 </head>
 
 <body>
-    <form action="">
-        <label for="">Tosse</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-        <label for="">Febre</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-        <label>Dor de cabeça</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-        <label>Dor no corpo</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-        <label>Coriza</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-        <label>Perda de apetite</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-        <label>Perda de sentido</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-        <label>Diarreia</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-        <label>Manchas</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-        <label>Náuseas</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-        <label>Dor de garganta</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-        <label>Dor de barriga</label>
-        <select name="" id="">
-            <option value=1>Sim</option>
-            <option value=0>Não</option>
-        </select>
-        <br>
-    </form>
+
+    <main class="tela-principal">
+
+        <section class='conteudos'>
+
+            <h1>Questionário Médico</h1>
+
+            <article class='centro' id='instrucoes'>
+                Você sentiu algum desses sintomas?
+                <br>
+                (não exclui consulta médica)
+            </article>
+
+            <article class='questoes'>
+
+                <header class='questao'>
+                    <span id='numQuestao'></span>
+                    <h2 id='pergunta'></h2>
+                </header>
+
+                <div class='corpo'>
+                    <ol type='A' id='alternativas'>
+                        <li id='a' value='true' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
+                        <li id='b' value='false' class='respostas' onClick='verificarSeAcertou(this, this)'></li>
+                    </ol>
+                </div>
+            </article>
+
+            <article id='aviso'>Questão <span id='numero'></span> de <span id='total'></span></article>
+
+        </section>
+
+    </main>
+    <script src="questionario.js"></script>
+
 </body>
 
 </html>

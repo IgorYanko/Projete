@@ -1,3 +1,5 @@
+/* Aula 20 MaiaQuiz  */
+
 let titulo = document.querySelector("h1");
 let instrucoes = document.querySelector("#instrucoes");
 let aviso = document.querySelector("#aviso");
@@ -21,118 +23,122 @@ let alternativas = document.querySelector("#alternativas");
 const q0 = {
   numQuestao: 0,
   pergunta: "Pergunta",
-  alternativaA: "Alternativa A",
-  alternativaB: "Alternativa B",
-  correta: "0",
+  alternativa1: "Sim",
+  alternativa2: "Não",
 };
 
 const q1 = {
   numQuestao: 1,
-  pergunta: "Você está tossindo?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
+  pergunta: "Tosse",
+  alternativa1: "Sim",
+  alternativa2: "Não",
   correta: "Sim",
+  sintoma: function (sintoma) {
+    +tosse;
+  },
 };
 
 const q2 = {
   numQuestao: 2,
-  pergunta: "Está com febre?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "Sul",
+  pergunta: "Febre",
+  alternativa1: "Sim",
+  alternativa2: "Não",
+  correta: "Sim",
+  valor: "febre",
 };
 
 const q3 = {
   numQuestao: 3,
-  pergunta: "Está sentindo dor de cabeça?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "Leste",
+  pergunta: "Dor de cabeça",
+  alternativa1: "Sim",
+  alternativa2: "Não",
+  correta: "Sim",
+  valor: "cefaleia",
 };
 
 const q4 = {
   numQuestao: 4,
-  pergunta: "E dor no corpo?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "Oeste",
+  pergunta: "Dor no corpo",
+  alternativa1: "Sim",
+  alternativa2: "Não",
+  correta: "Sim",
+  valor: "dornocorpo",
 };
 
 const q5 = {
   numQuestao: 5,
-  pergunta: "Está com coriza?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "América",
+  pergunta: "Coriza",
+  alternativa1: "Sim",
+  alternativa2: "Não",
+  correta: "Sim",
+  valor: "coriza",
 };
 
 const q6 = {
   numQuestao: 6,
-  pergunta: "Houve perda de apetite?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "América",
+  pergunta: "Perda de apetite",
+  alternativa1: "Sim",
+  alternativa2: "Não",
+  correta: "Sim",
+  valor: "perdadeapetite",
 };
 
 const q7 = {
   numQuestao: 7,
-  pergunta: "Houve perda de algum dos sentidos?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "América",
+  pergunta: "Perda de sentidos",
+  alternativa1: "Sim",
+  alternativa2: "Não",
+  correta: "Sim",
+  valor: "perdadesentido",
 };
 
 const q8 = {
   numQuestao: 8,
-  pergunta: "Teve diarreia?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "América",
+  pergunta: "Diarreia",
+  alternativa1: "Sim",
+  alternativa2: "Não",
+  correta: "Sim",
+  valor: "diarreia",
 };
 
 const q9 = {
   numQuestao: 9,
-  pergunta: "Notou-se manchas no corpo?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "América",
+  pergunta: "Manchas",
+  alternativa1: "Sim",
+  alternativa2: "Não",
+  correta: "Sim",
+  valor: "manchas",
 };
 
 const q10 = {
   numQuestao: 10,
-  pergunta: "Está sentindo náuseas?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "América",
+  pergunta: "Náuseas",
+  alternativa1: "Sim",
+  alternativa2: "Não",
+  correta: "Sim",
+  valor: "nauseas",
 };
 
 const q11 = {
   numQuestao: 11,
-  pergunta: "O Brasil se localiza em qual continente?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "América",
+  pergunta: "Dor de garganta",
+  alternativa1: "Sim",
+  alternativa2: "Não",
+  correta: "Sim",
+  valor: "dordegarganta",
 };
 
 const q12 = {
   numQuestao: 12,
-  pergunta: "O Brasil se localiza em qual continente?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "América",
-};
-
-const q13 = {
-  numQuestao: 13,
-  pergunta: "O Brasil se localiza em qual continente?",
-  alternativaA: "Sim",
-  alternativaB: "Não",
-  correta: "América",
+  pergunta: "Dor de barriga",
+  alternativa1: "Sim",
+  alternativa2: "Não",
+  correta: "Sim",
+  valor: "dordebarriga",
 };
 
 // CONSTANTE COM UM ARRAY DE OBJETOS COM TODAS AS QUESTOES
-
-const questoes = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13];
+const questoes = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12];
 
 let numero = document.querySelector("#numero");
 let total = document.querySelector("#total");
@@ -146,20 +152,20 @@ total.textContent = totalDeQuestoes;
 // MONTAR A 1a QUESTAO COMPLETA, para iniciar o Quiz
 numQuestao.textContent = q1.numQuestao;
 pergunta.textContent = q1.pergunta;
-a.textContent = q1.alternativaA;
-b.textContent = q1.alternativaB;
+a.textContent = q1.alternativa1;
+b.textContent = q1.alternativa2;
 
 // CONFIGURAR O VALUE INICIAL DA 1a QUESTAO COMPLETA
-a.setAttribute("value", "1A");
-b.setAttribute("value", "1B");
+a.setAttribute("value", "true");
+b.setAttribute("value", "false");
 
 // PARA MONTAR AS PROXIMAS QUESTOES
 function proximaQuestao(nQuestao) {
   numero.textContent = nQuestao;
   numQuestao.textContent = questoes[nQuestao].numQuestao;
   pergunta.textContent = questoes[nQuestao].pergunta;
-  a.textContent = questoes[nQuestao].alternativaA;
-  b.textContent = questoes[nQuestao].alternativaB;
+  a.textContent = questoes[nQuestao].alternativa1;
+  b.textContent = questoes[nQuestao].alternativa2;
   a.setAttribute("value", nQuestao + "A");
   b.setAttribute("value", nQuestao + "B");
 }
@@ -182,15 +188,11 @@ function verificarSeAcertou(nQuestao, resposta) {
   //console.log("RespU " + respostaEscolhida)
 
   let certa = questoes[numeroDaQuestao].correta;
-  //console.log("RespC " + certa)
+  let valor = questoes[numeroDaQuestao].valor;
 
   if (respostaEscolhida == certa) {
-    //console.log("Acertou")
-    //respostaEsta.textContent = "Correta 😊"
-    pontos += 10; // pontos = pontos + 10
-  } else {
-    //console.log("Errou!")
-    //respostaEsta.textContent = "Errada 😢"
+    respostap += sintoma;
+    console.log(respostap);
   }
 
   // bloquear a escolha de opcoes
@@ -236,4 +238,62 @@ function fimDoJogo() {
     pontos = 0; // zerar placar
     location.reload();
   }, 2000);
+}
+
+var gripe = 32;
+var covid = 28;
+var colera = 36;
+var variola = 18;
+var virose = 51;
+var dengue = 34;
+var respostap = 0;
+
+const tosse = 1;
+const febre = 2;
+const cefaleia = 3;
+const dornocorpo = 4;
+const coriza = 5;
+const perdadeapetite = 6;
+const perdadesentido = 7;
+const diarreia = 8;
+const manchas = 9;
+const nauseas = 10;
+const dordegarganta = 11;
+const dordebarriga = 12;
+
+if (q1 == true) {
+  respostap + tosse;
+}
+if (q2 == true) {
+  respostap + febre;
+}
+if (q3 == true) {
+  respostap + cefaleia;
+}
+if (q4 == true) {
+  respostap + dornocorpo;
+}
+if (q5 == true) {
+  respostap + coriza;
+}
+if (q6 == true) {
+  respostap + perdadeapetite;
+}
+if (q7 == true) {
+  respostap + perdadesentido;
+}
+if (q8 == true) {
+  respostap + diarreia;
+}
+if (q9 == true) {
+  respostap + manchas;
+}
+if (q10 == true) {
+  respostap + nauseas;
+}
+if (q11 == true) {
+  respostap + dordegarganta;
+}
+if (q12 == true) {
+  respostap + dordebarriga;
 }
